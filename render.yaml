@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    # Added space between --port and ${PORT} below
+    # START COMMAND MUST HAVE A SPACE AFTER --port
     startCommand: "uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000}"
     envVars:
       - key: PORT
